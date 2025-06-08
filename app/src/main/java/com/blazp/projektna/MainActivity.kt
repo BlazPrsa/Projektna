@@ -70,29 +70,21 @@ fun TlakApp() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        TlakContent(option = selectedOption)
+        CalculatorComponent(selectedValue = selectedOption)
+
+        // 1st Row: Nastavi željeni tlak in št. napadov (več kak 3 ne)
+        // Na podlagi tega izračunaj porabo 12mm ročnik (stran 172)
+        // Shrani si pretok vode na C cevi in na B cevi
+        // C cev pretok = št. barov na 12 mm ročniku po tabeli
+        // B cev pretok = C cev pretok * št. napadov
+        // Izračunaj čas do izpraznitve cisterne
+
+        // 2nd Row: Vnesi število cevi v C cevovodu in B cevovodu
+        // Na podlagi pretoka in dolžine cevi, izračunaj izgubo tlakov (182, 183)
+
+        // 3rd Row: Vnesi število armatur (vsaka je 0,25 bara)
+        // Vnesi višinsko razliko (1m je 0,1m)
     }
-}
-
-@Composable
-fun TlakContent(option: String) {
-
-    CalculatorComponent(selectedValue = option)
-
-    // 1st Row: Nastavi željeni tlak in št. napadov (več kak 3 ne)
-    // Na podlagi tega izračunaj porabo 12mm ročnik (stran 172)
-    // Shrani si pretok vode na C cevi in na B cevi
-    // C cev pretok = št. barov na 12 mm ročniku po tabeli
-    // B cev pretok = C cev pretok * št. napadov
-    // Izračunaj čas do izpraznitve cisterne
-
-    // 2nd Row: Vnesi število cevi v C cevovodu in B cevovodu
-    // Na podlagi pretoka in dolžine cevi, izračunaj izgubo tlakov (182, 183)
-
-    // 3rd Row: Vnesi število armatur (vsaka je 0,25 bara)
-    // Vnesi višinsko razliko (1m je 0,1m)
-
-
 }
 
 @Preview(showBackground = true)
